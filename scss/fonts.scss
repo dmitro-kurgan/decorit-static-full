@@ -1,0 +1,29 @@
+@mixin font-face($style-name, $file, $family, $category:"") {
+    $filepath: "../fonts/" + $file;
+    @font-face {
+        font-family: "#{$style-name}";
+        src: url($filepath + ".eot")format('embedded-opentype'), url($filepath + ".woff") format('woff'), url($filepath + ".ttf")  format('truetype');
+    }
+    %#{$style-name} {
+        font: {
+            @if $category != "" {
+                family: "#{$style-name}", #{$category};
+            }
+            @else {
+                family: "#{$style-name}";
+                weight: normal;
+                weight: normal;
+            }
+        }
+    }
+}
+@include font-face('Urbuntu-Regular', 'Urbuntu-Regular', 'Urbuntu', 'serif');
+@include font-face('Urbuntu-Light', 'Urbuntu-Light', 'Urbuntu', 'serif');
+@include font-face('Urbuntu-Medium', 'Urbuntu-Medium', 'Urbuntu', 'serif');
+@include font-face('Urbuntu-Bold', 'Urbuntu-Bold', 'Urbuntu', 'serif');
+@include font-face('HelveticaNeueCyr-Light', 'HelveticaNeueCyr-Light', 'HelveticaNeueCyr', 'serif');
+@include font-face('HelveticaNeueCyr-Medium', 'HelveticaNeueCyr-Medium', 'HelveticaNeueCyr', 'serif');
+@include font-face('HelveticaNeueCyr-Bold', 'HelveticaNeueCyr-Bold', 'HelveticaNeueCyr', 'serif');
+@include font-face('HelveticaNeueCyr-Roman', 'HelveticaNeueCyr-Roman', 'HelveticaNeueCyr', 'serif');
+@include font-face('Merriweather-Bold', 'Merriweather-Bold', 'Merriweather', 'serif');
+@include font-face('HelveticaNeueCyr-Thin', 'HelveticaNeueCyr-Thin', 'HelveticaNeueCyr', 'serif');
